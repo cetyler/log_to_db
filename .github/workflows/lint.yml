@@ -19,11 +19,11 @@ jobs:
           cache-dependency-glob: "uv.lock"
       - uses: actions/setup-python@v5
         with:
-          python-version-file: 'pyproject.toml' 
+          python-version-file: 'pyproject.toml'
 
       - name: Install dependencies
         run: uv sync --all-extras --dev
       - name: Run Ruff
         run: uvx ruff check --output-format=github
       - name: Run mypy
-        run: uvx mypy -m log_to_db --strict 
+        run: uvx mypy -m log_to_db --strict
