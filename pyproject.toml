@@ -1,0 +1,136 @@
+[project]
+name = "log_to_db"
+authors = [{name = "Christopher Tyler"}]
+dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "psycopg[binary]",
+]
+
+[project.urls]
+Home = "https://github.com/cetyler/log_to_db/wiki"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "ruff",
+    "hatch",
+    "uv",
+    "pytest",
+    "pytest-cov",
+    "pytest-picked",
+    "pytest-randomly",
+    "coverage",
+    "mypy>=1.11.2",
+    "pre-commit >=3.0.4",
+    "twine>=6.0.1",
+]
+
+[tool.uv.sources]
+db_logging = { workspace = true }
+
+[tool.hatch.version]
+path = "log_to_db/__init__.py"
+
+[tool.ruff]
+# Assume Python 3.11
+target-version = "py311"
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+# Same as Black.
+line-length = 88
+
+[tool.ruff.lint]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = [
+  "B",
+  "C",
+  "E", # pycodestyle
+  "F", # pyflakes
+  "W",
+  "I001", # isort
+  ]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+ignore = ["E501", "F403", "F401", "C901", "E722", "C408", "B904", "W605"]
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = false
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--tb=no -v --cov=db_logging"
+markers = "smoke : smoke tests"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+no_namespace_packages = true
+
+[[tool.mypy.overrides]]
+module = [
+  "log_to_db.__init__",
+  "rich.*",
+]
+ignore_missing_imports = true
