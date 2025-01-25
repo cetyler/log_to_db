@@ -26,4 +26,4 @@ jobs:
       - name: Run Ruff
         run: uvx ruff check --output-format=github
       - name: Run mypy
-        run: uvx mypy -m openweather_report --strict 
+        run: uvx mypy -m log_to_db --strict 

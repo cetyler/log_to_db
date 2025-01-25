@@ -1,5 +1,5 @@
 import pytest
-from db_logging.db_log import DBLog
+from log_to_db.db_log import DBLog
 
 
 @pytest.mark.parametrize(
