@@ -1,4 +1,5 @@
 import pytest
+
 from log_to_db.db_log import DBLog
 
 
