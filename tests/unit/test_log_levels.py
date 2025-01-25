@@ -1,6 +1,7 @@
 import pytest
 from db_logging.db_log import DBLog
 
+
 @pytest.mark.parametrize(
         "level_name, level_value",
         [
