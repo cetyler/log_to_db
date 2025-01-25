@@ -132,5 +132,7 @@ no_namespace_packages = true
 module = [
   "log_to_db.__init__",
   "rich.*",
+  "duckdb.*",
+  "psycopg.*",
 ]
 ignore_missing_imports = true

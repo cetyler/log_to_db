@@ -235,47 +235,6 @@ wheels = [
 ]
 
 [[package]]
-name = "db-logging"
-version = "0.2.0"
-source = { editable = "." }
-dependencies = [
-    { name = "psycopg", extra = ["binary"] },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "coverage" },
-    { name = "hatch" },
-    { name = "mypy" },
-    { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-picked" },
-    { name = "pytest-randomly" },
-    { name = "ruff" },
-    { name = "twine" },
-    { name = "uv" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "psycopg", extras = ["binary"] }]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "coverage" },
-    { name = "hatch" },
-    { name = "mypy", specifier = ">=1.11.2" },
-    { name = "pre-commit", specifier = ">=3.0.4" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
-    { name = "pytest-picked" },
-    { name = "pytest-randomly" },
-    { name = "ruff" },
-    { name = "twine", specifier = ">=6.0.1" },
-    { name = "uv" },
-]
-
-[[package]]
 name = "distlib"
 version = "0.3.9"
 source = { registry = "https://pypi.org/simple" }
@@ -505,6 +464,46 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/70/09/d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37d/keyring-25.6.0.tar.gz", hash = "sha256:0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66", size = 62750 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d3/32/da7f44bcb1105d3e88a0b74ebdca50c59121d2ddf71c9e34ba47df7f3a56/keyring-25.6.0-py3-none-any.whl", hash = "sha256:552a3f7af126ece7ed5c89753650eec89c7eaae8617d0aa4d9ad2b75111266bd", size = 39085 },
+]
+
+[[package]]
+name = "log-to-db"
+source = { editable = "." }
+dependencies = [
+    { name = "psycopg", extra = ["binary"] },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "coverage" },
+    { name = "hatch" },
+    { name = "mypy" },
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-picked" },
+    { name = "pytest-randomly" },
+    { name = "ruff" },
+    { name = "twine" },
+    { name = "uv" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "psycopg", extras = ["binary"] }]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "coverage" },
+    { name = "hatch" },
+    { name = "mypy", specifier = ">=1.11.2" },
+    { name = "pre-commit", specifier = ">=3.0.4" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-picked" },
+    { name = "pytest-randomly" },
+    { name = "ruff" },
+    { name = "twine", specifier = ">=6.0.1" },
+    { name = "uv" },
 ]
 
 [[package]]

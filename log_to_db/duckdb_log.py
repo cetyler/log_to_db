@@ -12,7 +12,7 @@ from .exceptions import DBSaveError
 
 @dataclass
 class DuckDBLog(DBLog):
-    connection_info: Path = Path.cwd("log.sqlite")
+    connection_info: Path = Path.cwd() / "log.duckdb"
 
     def save_log(self) -> int:
         try:
