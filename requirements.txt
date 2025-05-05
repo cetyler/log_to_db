@@ -2,5 +2,5 @@
 #    uv pip compile pyproject.toml -o requirements.txt
 psycopg==3.2.4
     # via db-logging (pyproject.toml)
-psycopg-binary==3.2.4
+psycopg-binary==3.2.7
     # via psycopg
