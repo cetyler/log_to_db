@@ -118,7 +118,7 @@ docstring-code-line-length = "dynamic"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--tb=no -v --cov=db_logging"
+addopts = "--tb=no -v --cov=log_to_db"
 markers = "smoke : smoke tests"
 testpaths = ["tests"]
 

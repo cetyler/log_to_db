@@ -14,4 +14,4 @@ jobs:
       - name: Run pre-commit hooks
         env:
           SKIP: no-commit-to-branch  # Skip the main branch protection hook in CI
-        run: pre-commit run --all-files
+        run: uv run pre-commit run --all-files
