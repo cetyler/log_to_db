@@ -8,10 +8,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
       - name: Install pre-commit globally
         run: uv tool install pre-commit --with pre-commit-uv --force
       - name: Run pre-commit hooks
         env:
           SKIP: no-commit-to-branch  # Skip the main branch protection hook in CI
-        run: pre-commit run --all-files
+        run: uv run pre-commit run --all-files

@@ -5,9 +5,6 @@ from datetime import datetime
 from typing import Any, Dict
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-import psycopg
-from psycopg.types.json import Jsonb
-
 
 @dataclass
 class DBLog:
@@ -33,11 +30,11 @@ class DBLog:
 
     def get_error_codes(self, code) -> str:
         error_codes = {
-            0: "Successful",
+            0: "Successful.",
             -1: "Can't connect to database.",
             -2: "Can't write to database.",
             -3: "Invalid log message.",
-            -4: "Invalid timezone",
+            -4: "Invalid timezone.",
             -5: "Invalid folder path.",
             -6: "Invalid filename.",
             -99: "Invalid error code.",
