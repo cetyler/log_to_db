@@ -1,7 +1,5 @@
 import pytest
-from tempfile import TemporaryDirectory
 from log_to_db.duckdb_log import DuckDBLog
-from pathlib import Path
 import duckdb
 
 @pytest.fixture()
