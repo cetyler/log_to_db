@@ -22,7 +22,7 @@ class DuckDBLog(DBLog):
                         cur.execute(
                             """
                             insert into logs (entry, program, pc_name, level, message, details)
-                            values (%s, %s, %s, %s, %s, %s)
+                            values (?, ?, ?, ?, ?, ?)
                             """,
                             (
                                 str(log_timestamp),
@@ -30,7 +30,7 @@ class DuckDBLog(DBLog):
                                 log_info["pc_name"],
                                 log_info["level"],
                                 log_info["message"],
-                                Jsonb(log_info["details"]),
+                                log_info["details"],
                             ),
                         )
                     conn.commit()
