@@ -1,6 +1,8 @@
-import pytest
-from log_to_db.duckdb_log import DuckDBLog
 import duckdb
+import pytest
+
+from log_to_db.duckdb_log import DuckDBLog
+
 
 @pytest.fixture()
 def duckdb_log(tmp_path):

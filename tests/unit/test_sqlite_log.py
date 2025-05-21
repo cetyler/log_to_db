@@ -1,6 +1,9 @@
-import pytest
-from log_to_db.sqlite_log import SQLiteLog
 import sqlite3
+
+import pytest
+
+from log_to_db.sqlite_log import SQLiteLog
+
 
 @pytest.fixture()
 def sqlite_log(tmp_path):

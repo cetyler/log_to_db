@@ -5,6 +5,7 @@ from datetime import datetime
 from typing import Any, Dict
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
+
 @dataclass
 class DBLog:
     save_level: str
