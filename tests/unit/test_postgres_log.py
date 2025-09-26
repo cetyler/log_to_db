@@ -5,13 +5,15 @@ This will read a .env file to get the login credentials.
 There is an env_sample that you can to modify for your credentials.
 """
 
+import os
+import socket
+
+import duckdb
 import psycopg
 import pytest
 from dotenv import load_dotenv
-import os
+
 from log_to_db.postgres_log import PostgresLog
-import duckdb
-import socket
 
 load_dotenv()
 db_host = os.getenv("DB_HOST")
@@ -27,7 +29,11 @@ def is_postgres_available():
     status = False
     timeout = 2
     try:
-        with socket.create_connection((db_host, int(db_port)),timeout=timeout):
+        port = int(db_port)
+    except:
+        port = 80
+    try:
+        with socket.create_connection((db_host, port),timeout=timeout):
             status = True
     except OSError:
         status = False
