@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import os
 from log_to_db.postgres_log import PostgresLog
 import duckdb
+import socket
 
 load_dotenv()
 db_host = os.getenv("DB_HOST")
@@ -20,6 +21,18 @@ db_password = os.getenv("DB_PASSWORD")
 db_name = os.getenv("DB_DATABASE")
 
 connection_info = f"postgres://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+
+def is_postgres_available():
+    """Check if Postgres is available"""
+    status = False
+    timeout = 2
+    try:
+        with socket.create_connection((db_host, int(db_port)),timeout=timeout):
+            status = True
+    except OSError:
+        status = False
+
+    return status
 
 @pytest.fixture()
 def postgres_log():
@@ -70,6 +83,7 @@ def postgres_log():
             cur.execute("""drop table if exists log_to_db.logs;""")
             cur.execute("""drop table log_to_db.log_levels;""")
 
+@pytest.mark.skipif(not is_postgres_available(), reason="PostgreSQL server not available")
 def test_save_log(postgres_log: PostgresLog):
     con = duckdb.connect()
     con.execute("""install postgres;""")
