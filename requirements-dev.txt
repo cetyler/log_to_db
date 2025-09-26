@@ -4,7 +4,7 @@ duckdb==1.4.0
     # via log-to-db (pyproject.toml)
 psycopg==3.2.9
     # via log-to-db (pyproject.toml)
-psycopg-binary==3.2.9
+psycopg-binary==3.2.10
     # via psycopg
 typing-extensions==4.14.0
     # via psycopg
