@@ -7,10 +7,6 @@ Bugfixes (x.x.1) or very minor features that are isolated to a particular thing.
 
 **Note** that only future releases will be shown.
 
-## Release 0.3.0
-
-* Test coverage for PostgreSQL.
-
 ## Release 0.4.0
 
 * Add option to create schema and tables if they don't exists.
