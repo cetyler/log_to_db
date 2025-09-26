@@ -6,7 +6,7 @@ psycopg==3.2.10
     # via log-to-db (pyproject.toml)
 psycopg-binary==3.2.10
     # via psycopg
-typing-extensions==4.14.0
+typing-extensions==4.15.0
     # via psycopg
 tzdata==2025.2
     # via psycopg
