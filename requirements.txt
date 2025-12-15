@@ -8,5 +8,5 @@ psycopg-binary==3.2.10
     # via psycopg
 typing-extensions==4.15.0
     # via psycopg
-tzdata==2025.2
+tzdata==2025.3
     # via psycopg
