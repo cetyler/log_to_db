@@ -1,16 +1,11 @@
-## 0.3.0
+## 0.3.1
 
 ### Overview
 
-Increase test coverage and update documentation.
+Update packages.
 
 ### Features
 
-- Added: PostgreSQL testing.
-  - I added `env_sample` to connect to PostgreSQL instance.
-- Added: Development and Usage sections in README.
-- Changed: Up rev dependencies.
-  - typing-extensions to 4.15.0.
-  - psycopg to 3.2.10.
-  - psycopg-binary to 3.2.10.
-  - duckdb to 1.4.0.
+- Changed: Updated GitHub actions.
+  - Included Python 3.14.
+- Changed: Updated packages recommended by Dependabot.
