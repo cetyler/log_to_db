@@ -6,5 +6,5 @@ psycopg==3.3.3
     # via log-to-db (pyproject.toml)
 psycopg-binary==3.3.3
     # via psycopg
-tzdata==2026.1
+tzdata==2026.2
     # via psycopg
