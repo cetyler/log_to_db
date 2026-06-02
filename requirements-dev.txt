@@ -2,7 +2,7 @@
 #    uv pip compile pyproject.toml --all-extras -o requirements-dev.txt
 duckdb==1.5.2
     # via log-to-db (pyproject.toml)
-psycopg==3.3.3
+psycopg==3.3.4
     # via log-to-db (pyproject.toml)
 psycopg-binary==3.3.3
     # via psycopg
